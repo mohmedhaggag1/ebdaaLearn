@@ -1,0 +1,50 @@
+<app-success-people></app-success-people>
+<div class="page-title-area">
+    <div class="container">
+      <div class="page-title-content">
+        <ul>
+          <li><a routerLink="/">الرئيسية</a></li>
+          <li>الدورات التدريبية</li>
+        </ul>
+        <h2>الدورات التدريبية</h2>
+      </div>
+    </div>
+    <div class="shape9"><img src="assets/img/shape8.svg" alt="image"></div>
+  </div>
+  <div class="d-flex align-items-center justify-content-center py-5" *ngIf="loader">
+    <div class="lds-ripple"><div></div><div></div></div>
+  </div>
+  <div *ngIf="!loader && allCourses" class="courses-area ptb-100 bg-f5f7fa">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-12" *ngFor="let filed of allCourses">
+          <div class="single-courses-item">
+            <div class="row align-items-center">
+              <div class="col-lg-4 col-md-4">
+                <div class="courses-image">
+                  <img [src]="urlImage + filed.image" [alt]="filed.title">
+                  <a href="javascript:void(0)" (click)="goTo(filed.id)" class="link-btn"></a>
+                </div>
+              </div>
+              <div class="col-lg-8 col-md-8">
+                <div class="courses-content">
+                  <!--                                <a routerLink="/" class="fav"><i class="flaticon-heart"></i></a>-->
+  <!--                <span class="price">{{filed.price}} ر.س </span>-->
+                    <h3><a href="javascript:void(0)" (click)="goTo(filed.id)">{{filed.title}}</a></h3>
+                      <h5 ><a style="color: red;" href="javascript:void(0)" (click)="deleteCourse(filed.id)">حذف الدورة </a></h5>
+
+                  <ul class="courses-content-footer d-flex justify-content-between align-items-center">
+                    <!--<li *ngIf="filed.numberOfStudents"><i class='flaticon-people'></i> عدد الطلاب
+                      : {{filed.numberOfStudents}}
+                    </li>-->
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  

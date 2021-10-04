@@ -1,0 +1,133 @@
+<app-navbar ></app-navbar>
+
+<div class="page-title-area">
+    <div class="container">
+        <div class="page-title-content">
+            <ul>
+                <li><a routerLink="/">الرئيسية</a></li>
+                <li>اتصل بنا</li>
+            </ul>
+            <h2>اتصل بنا</h2>
+        </div>
+    </div>
+    <div class="shape9"><img src="assets/img/shape8.svg" alt="image"></div>
+</div>
+
+<div class="contact-area ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12">
+                <div class="contact-info">
+                  <span class="sub-title">بيانات المتصل</span>
+                    <h2>ابقى على تواصل</h2>
+<!--                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra.</p>-->
+                    <ul>
+                      <li>
+                        <div class="icon">
+                          <i class='bx bx-map'></i>
+                        </div>
+                        <h3>عنوان</h3>
+                        <p>شارع الامير فيصل- حوطة بني تميم</p>
+                      </li>
+                      <li>
+                        <div class="icon">
+                          <i class='bx bx-phone-call'></i>
+                        </div>
+                        <h3>اتصل بنا</h3>
+                        <p>الجوال : <a href="tel:0507709264">9264-770-050</a></p>
+                        <p>الجوال : <a href="tel:0115554000">4000-555-011</a></p>
+                        <p>البريد : <a href="mailto:info@ebdaalearn.com">info@ebdaalearn.com</a></p>
+                      </li>
+                        <li>
+                            <div class="icon">
+                                <i class='bx bx-time-five'></i>
+                            </div>
+                            <h3>ساعات العمل</h3>
+                            <p>الاثنين - الجمعة: 09:00 - 20:00</p>
+                            <p>الأحد والسبت: 10:30 - 22:00</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <div class="contact-form" style="background-image: url({{bgImage}}); filter: hue-rotate(28deg);">
+                  <h2>على استعداد للبدء؟</h2>
+                  <p>لن يتم نشر عنوان بريدك الإلكتروني. الحقول المطلوبة محددة *</p>
+                  <form  [formGroup]="ContactUsData" (ngSubmit)="contactus()">
+                    <div class="row">
+                      <div class="col-lg-12 col-md-6">
+                        <div class="form-group">
+                          <div class="input-group">
+                              <input  type="text" required class="form-control"
+                              formControlName="name"
+                              [ngStyle]="{ 'text-align': 'right'}" placeholder="اسمك (مطلوب)">
+                          </div>
+                      </div>
+                      </div>
+                      <div class="col-lg-12 col-md-6">
+                        <div class="form-group">
+                          <div class="input-group"> 
+                             <input type="email"
+                              formControlName="email"
+                              class="form-control"[ngStyle]="{ 'text-align': 'right'}"  required  placeholder="بريدك الإلكتروني (مطلوب)" >
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-12 col-md-12">
+                        <div class="form-group">
+                          <div class="input-group">
+                              <input 
+                              formControlName="phone"
+                              
+                              type="text" required class="form-control"
+                              [ngStyle]="{ 'text-align': 'right'}"  placeholder="الهاتف">
+                          </div>
+                      </div>
+                      </div>
+                      <div class="col-lg-12 col-md-12">
+                        <div class="form-group">
+                          <div class="input-group">
+                              <input  type="text" 
+                              formControlName="subject"
+                              required class="form-control"[ngStyle]="{ 'text-align': 'right'}"
+                                placeholder="الموضـــوع">
+                          </div>
+                      </div>
+                      </div>
+                      <div class="col-lg-12 col-md-12">
+                        <div class="form-group">
+                          <div class="input-group">
+                              <textarea  rows="4" class="form-control" 
+                              required [ngStyle]="{ 'text-align': 'right'}" 
+                              formControlName="message"
+                              placeholder="رسالتك"></textarea>
+                          </div>
+                      </div>
+                      </div>
+                      <div class="col-lg-12 col-md-12">
+                        <div class="d-flex align-items-center justify-content-start">
+                          <button type="submit" [disabled]="disable" class="default-btn me-3" >أرسل رسالة<span></span></button>
+                          <span class="font-weight-black text-white" *ngIf="!loader">{{status}}</span>
+                          <div class="d-flex align-items-center justify-content-center" *ngIf="loader">
+                            <div class="sk-chase">
+                              <div class="sk-chase-dot"></div>
+                              <div class="sk-chase-dot"></div>
+                              <div class="sk-chase-dot"></div>
+                              <div class="sk-chase-dot"></div>
+                              <div class="sk-chase-dot"></div>
+                              <div class="sk-chase-dot"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="map">
+  <iframe width="100%" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=500&amp;hl=en&amp;q=%D8%B4%D8%A7%D8%B1%D8%B9%20%D8%A7%D9%84%D8%A7%D9%85%D9%8A%D8%B1%20%D9%81%D9%8A%D8%B5%D9%84+(%D8%B4%D8%A7%D8%B1%D8%B9%20%D8%A7%D9%84%D8%A7%D9%85%D9%8A%D8%B1%20%D9%81%D9%8A%D8%B5%D9%84-%20%D8%AD%D9%88%D8%B7%D8%A9%20%D8%A8%D9%86%D9%8A%20%D8%AA%D9%85%D9%8A%D9%85)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+</div>

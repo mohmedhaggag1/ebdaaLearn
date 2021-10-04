@@ -1,0 +1,34 @@
+<div class="courses-area bg-f5f7fa pt-100 pb-70">
+  <div class="container">
+    <div class="section-title">
+      <span class="sub-title">انطلق وفقًا لسرعتك الخاصة</span>
+      <h2>أكبر مجموعة مختارة من الدورات</h2>
+      <p>يتميز المدربين فى معهد إبدأ التدريب بالشرح المتقن والمعلومات المتطورة فى جميع المجالات والوصول بك الى اعلى
+        المستويات .</p>
+    </div>
+    <div class="courses-tabs">
+      <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-6" *ngFor="let filed of allCourses">
+          <div class="single-courses-item-box" (click)="goTo(filed.id)">
+            <div class="courses-image">
+              <a href="javascript:void(0)" class="d-block image">
+                <img [src]="urlImage + filed.image" [alt]="filed.image">
+              </a>
+              <!--                  <a routerLink="/" class="fav"><i class="flaticon-heart"></i></a>-->
+             <!-- <div class="price shadow d-flex align-items-center justify-content-center flex-column">{{filed.price}}
+                <div>ر.س</div>
+              </div>-->
+            </div>
+            <div class="courses-content">
+              <h3><a href="javascript:void(0)">{{filed.title}}</a></h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-3">
+        <a routerLink="/courses" class="default-btn"><i class="flaticon-quiz"></i>عرض جميع الدورات<span></span></a>
+      </div>
+    </div>
+  </div>
+  <div class="shape16"><img src="assets/img/shape15.png" alt="image"></div>
+</div>

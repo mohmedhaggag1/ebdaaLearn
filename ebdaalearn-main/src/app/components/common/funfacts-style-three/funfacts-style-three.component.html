@@ -1,0 +1,89 @@
+<app-success-people></app-success-people>
+
+<div class="page-wraper">
+    <!-- header -->
+    <!-- <app-header-light1></app-header-light1> -->
+    <!-- header END -->
+    <!-- Content -->
+    <div class="page-content bg-white">
+        <!-- inner page banner -->
+        <!-- <app-banner1 [data] = "banner"></app-banner1> -->
+        <!-- inner page banner END -->
+        <!-- contact area -->
+        <div class="section-full content-inner shop-account">
+            <!-- Product -->
+            <div class="container">
+                <div class="row">
+					<div class="col-lg-2"> </div>
+					<div class="col-lg-8 m-b30">
+						<div class="p-a30 border-1  max-w500 m-auto">
+							<div class="tab-content">
+								<form #f=ngForm [formGroup]="courseobj" (ngSubmit)="addoneCourse()" dir="rtl">
+									<h4 class="font-weight-700 text-center" >إضافة  دورة   جديدة </h4>
+									
+									<div class="form-group" >
+										<label class="font-weight-700 mt-2 pull-right" dir="rtl">  اسم الدورة التدريبية  * </label>
+										<input  required="" class="form-control pull-right" formControlName="Title"
+										placeholder="اسم الدورة التدريبية   " type="text">
+									</div> 
+									<div class="form-group" >
+										<label class="font-weight-700 mt-2 pull-right" dir="rtl">محتوي الدورة  * </label>
+										<input  required="" class="form-control pull-right" formControlName="Body"
+										placeholder=" محتوي الدورة " type="text">
+									</div> 
+									<div class="form-group">
+										<label class="font-weight-700 mt-2 pull-right" dir="rtl">صورة الدورة التدريبية  *  </label>
+										<input  required="" class="form-control pull-right"  
+										(change)=addFileToObject($event)
+										placeholder=" صورة الدورة التدريبية   " type="file">
+									</div>
+									<div class="form-group" >
+										<label class="font-weight-700 mt-2 pull-right" dir="rtl"> عدد الطلاب  * </label>
+										<input  required="" class="form-control pull-right" formControlName="NumberOfStudents"
+										placeholder=" عدد  الطلاب " type="text">
+									</div> 
+									<div class="row">
+										<div class="col-sm-6">
+											<div class="form-group" >
+												<label class="font-weight-700 mt-2 pull-right" dir="rtl">تكلفة  الدورة  * </label>
+												<input  required="" class="form-control pull-right" formControlName="Price"
+												placeholder=" تكلفة  الدورة " type="text">
+											</div> 
+										</div>
+										<div class="col-sm-6 mt-2 Select">
+												<label class=" pull-right " dir="rtl" for="addViue">  معلم الدورة التدريبية *</label>
+												<select #selectVal (change)="getSelectValue(selectVal.value)" class="form-control">
+													<option *ngFor="let o of posts"
+														[value]="o.id">
+														{{ o.name }}
+													</option>
+												</select>
+										</div>
+									</div>
+									<div class="buttont mt-3 mb-5">
+										<button class="btn btn-primary  button-lg mt-3"
+										type="submit" 
+										>حفظ</button> 
+										<!-- (click)="createObject(inputData.value,emildata.value,passwordData.value,pass2Data.value)" -->
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-2"> </div>
+
+				</div>
+			</div>
+            <!-- Product END -->
+		</div>
+		<!-- Shop Service info -->
+		<!-- <app-icon-box4></app-icon-box4> -->
+		<!-- Shop Service info End -->
+    </div>
+    <!-- Content END-->
+    <!-- Newsletter -->
+	<!-- <app-newsletter2></app-newsletter2> -->
+   <!-- Footer -->
+    <!-- <app-footer13></app-footer13> -->
+    <!-- Footer END-->
+</div>

@@ -1,0 +1,51 @@
+
+<app-success-people></app-success-people>
+                <div class="row justify-contententer">
+					<div class="container">
+					<div class="col-lg-8 m-b30  ">
+						
+								<form #f=ngForm [formGroup]="portfile" (ngSubmit)="addteacher()" dir="rtl ">
+									<h4 class="font-weight-700 text-center mb-2" >إضافة  معلم  جديد </h4>
+									<!-- <p class="font-weight-600 text-center" >إذا كان لديك حساب بالفعل , قم بتسجيل الدخول</p> -->
+									<div class="row">
+										<div class="col-md-6 col-sm-12">
+											<div class="form-group">
+												<label class="font-weight-700 pull-right" dir="rtl">اسم المعلم    *</label>
+												<input   required="" class="form-control pull-right" name="Name" formControlName="Name"
+													 placeholder="اسم المعلم  " type="text">
+											</div>
+										</div>
+										<div class="col-md-6 col-sm-12">
+											<div class="form-group" >
+												<label class="font-weight-700 mt-2 pull-right" dir="rtl"> نبذة عن المعلم  * </label>
+												<input   required="" class="form-control pull-right"
+												 formControlName="Title"
+												placeholder="نبذه عن المعلم  " type="text">
+											</div>
+										</div>
+									</div>
+									
+									<div class="row mb-5">
+										<div class="col-md-6 col-sm-12">
+											<div class="form-group">
+												<label class="font-weight-700 mt-2 pull-right" dir="rtl">صورة المعلم  *  </label>
+												<input (change)="display ($event)" required="" class="form-control pull-right" 
+												placeholder="صورة المعلم" type="file">
+											</div>
+										</div>
+										<div class="col-md-6 col-sm-12">
+											<div class="buttont form mt-4 font-weight-700">
+												<button class="btn btn-primary form-control "
+												type="submit" 
+												>حفظ</button>
+												<!-- (click)="createObject(inputData.value,emildata.value,passwordData.value,pass2Data.value)" -->
+											</div>
+										</div>
+									</div>
+									
+								
+								</form>
+					</div>
+				</div>
+				</div>
+		

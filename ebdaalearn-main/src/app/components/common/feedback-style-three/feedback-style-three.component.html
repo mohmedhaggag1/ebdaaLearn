@@ -1,0 +1,65 @@
+<app-navbar></app-navbar>
+<div class="container">
+<div class="row">
+   
+       
+
+        <form #f=ngForm [formGroup]="SignupForm" (ngSubmit)="signup()" dir="rtl">
+            <h4 class="font-weight-700 text-center" >بينات شخصية</h4>
+            <p class="font-weight-600 text-center" >إذا كان لديك حساب بالفعل , قم بتسجيل الدخول</p>
+           <div class="row">
+               <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="font-weight-700 pull-right" dir="rtl">الاسم الاول *</label>
+                    <input  required="" class="form-control pull-right" formControlName="username"
+                    
+                    
+                    placeholder="الاسم الاول" type="text">
+                </div>
+               </div>
+
+               <div class="col-sm-6">
+                <div class="form-group " dir="rtl">
+                    <label  class="font-weight-700 mt-2  pull-right" dir="rtl">البريد الإلكتروني  *</label>
+                    <input  required="" class="form-control pull-right" formControlName="email"
+                    
+                    placeholder="" type="email">
+                </div>
+               </div>
+           </div>
+           
+           <div class="row">
+               <div class="col-sm-6">
+                <div class="form-group" >
+                    <label class="font-weight-700 mt-2 pull-right" dir="rtl">كلمة المرور * </label>
+                    <input  required="" class="form-control pull-right" formControlName="password"
+                    
+                    
+                    placeholder="ادخل كلمة المرور" type="password">
+                </div>
+               </div>
+               <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="font-weight-700 mt-2 pull-right" dir="rtl">تأكيد كلمة المرو *  </label>
+                    <input  required="" class="form-control pull-right"  formControlName="confirmPassword"
+                
+                    
+                    placeholder="تأكيد كلمة المرو " type="password">
+                </div>
+               </div>
+           </div>
+           
+            
+            
+
+           
+           
+            <div class="buttont mt-3 text-center">
+                <button class="btn  btn-primary  button-lg  text-center m-5" 
+                type="submit" 
+                >حفظ</button>
+                <!-- (click)="createObject(inputData.value,emildata.value,passwordData.value,pass2Data.value)" -->
+            </div>
+        </form>
+    </div>
+</div>

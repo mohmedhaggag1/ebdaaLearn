@@ -1,0 +1,30 @@
+<app-navbar></app-navbar>
+
+<div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4 te">
+        <form class=" col-12 p-a0" dir="rtl"  [formGroup]="SendCode" (ngSubmit)="sendMyCode()">
+
+            <h4 class="font-weight-700 hll text-align">هل نسيت كلمة المرور ؟</h4>
+            <p class="font-weight-600 text-center">لإستعادة كلمة المرور سوف نقوم بارسال كود خاص بك </p>
+            <!-- <p class="font-weight-600 text-center">من فضلك لا تقم بمشاركة الكود  </p> -->
+            
+            
+            <div class="form-group">
+                <div class="input-group"> 
+                   <input type="email" dir="rtl"
+                   formControlName="toEmail"
+                    class="form-control pull-right"[ngStyle]="{ 'text-align': 'right'}"  required  placeholder="بريدك الإلكتروني (مطلوب)" >
+                </div>
+            </div>
+            <div class="text-center" dir="ltr"> 
+                <a class="site-button outline gray button-lg radius-no m-2" data-toggle="tab" [routerLink]="['/login']">رجوع </a>
+                <button type="submit" class="btn  btn-primary  m-5">حـفـظ</button>
+            </div>
+            <a data-toggle="tab" [routerLink]="['/send-Code']"><i class="fa fa-unlock-alt"></i>اضغط هنا لإرسال الكود</a> 
+        
+        </form>
+    </div>
+        
+</div>
+
